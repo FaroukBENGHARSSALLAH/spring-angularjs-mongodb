@@ -1,0 +1,47 @@
+    <div class="container">
+        <header>
+             <h5>Options</h5>
+        </header>
+       
+        <br /><br />
+	
+        	
+                 <div class="row"   >
+                    <div class="span12" >
+                    
+                     <table class="table" >
+							 <thead>
+							      <tr>							  
+							 	        <th>reference</th>
+							 	        <th>type</th>
+									    <th>strike price</th>
+									    <th>stock price</th>
+									    <th>share price</th>
+									    <th>expire</th>
+									    <th>intrinsic</th>
+									    <th>speculative</th>
+									    <th>In money</th>
+									    <th>actions</th>
+							      </tr>
+							  </thead>
+							  <tbody>
+							    <tr data-ng-repeat="option in options | orderBy:'expiration'" >
+									    <td>{{ option.reference}}</td>
+									    <td>{{ option.type}}</td>
+									    <td>{{option.strikePrice}}</td>
+									    <th>{{ option.stock.price}}</th>
+									    <td>{{ option.sharePrice}}</td>
+									    <td>{{ option.expiration | date:"dd/MM/yyyy"}}</td>
+									    <td>{{ option.intrinsicValue}}</td>
+									    <td>{{ option.speculativePremium}}</td>
+									    <td><label  ng-class="{'label label-success': option.inMoney, 'label label-warning': !option.inMoney}" >
+									    {{ option.inMoney }}</label></td>
+							            <td><a class="btn btn-xs btn-info" ng-click="buy(option.reference)">buy</a></td>
+							  </tr>
+							  </tbody>
+							</table>
+                    </div>
+                 
+            </div>   
+        
+    </div>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html data-ng-app="vidulumApp">
+<head>
+<meta charset="UTF-8"></meta>
+
+<title>vidulum</title>
+
+<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
+<link th:href="@{/css/style.css}" rel="stylesheet" />
+
+<!-- Vendor Libs: jQuery only used for Bootstrap functionality -->
+<script th:src="@{/js/angular.js}"></script>
+<script th:src="@{/js/angular-route.js}"></script>
+<script th:src="@{/js/jquery.min.js}"></script>
+
+<!-- UI Libs -->
+<script th:src="@{/js/bootstrap.min.js}"></script>
+
+<!-- App libs -->
+<script th:src="@{/js/app/app.js}"></script>
+<script th:src="@{/js/app/controllers/controllers.js}"></script>
+<script th:src="@{/js/app/directives/angular-bind-html-compile.js}"></script>
+
+ <link rel="icon"  type="image/x-icon"  th:href="@{/images/favicon.png}"  />
+
+
+</head>
+
+<body style="font-size: 12px">
+
+	<nav class="navbar navbar-default">
+	  <div class="container-fluid">
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+	        <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+	      <a class="navbar-brand" href="#/">Vidulum</a>
+	    </div>
+	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	      <ul class="nav navbar-nav">
+	          <li><a href="#/option">Options</a></li>
+			  <li><a href="#/portfolio">Portfolio</a></li>
+	      </ul>
+	    </div>
+	  </div>
+	</nav>
+
+
+	  <div data-ng-view=""></div>
+	  
+	  
+	    <div class="content-footer" th:fragment="footer"> 
+			    <div class="copyright" style="padding: 6.2em 3em;">
+				    <p>
+					     <i><span id="year"></span> BEN GHARSSALLAH Corp. &copy; <a href="mailto:farouk.bengarssallah@gmail.com">farouk.bengarssallah</a></i> 
+					     
+					</p>
+					<script type="text/javascript">
+					   document.getElementById("year").innerHTML = new Date().getUTCFullYear();
+					</script>
+			   </div> 
+			</div> 
+
+</body>
+</html>

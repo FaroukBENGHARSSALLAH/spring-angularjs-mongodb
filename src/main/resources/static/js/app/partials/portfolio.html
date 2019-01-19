@@ -1,0 +1,46 @@
+    <div class="container">
+        <header>
+             <h5>My wallet</h5>
+        </header>
+       
+       <h1>Mr {{ portfolio.owner }} 's Portfolio</h1>
+        <br /><br />
+	
+        	
+                 <div class="row"   >
+                    <div class="span12" >
+                    
+                     <table class="table" >
+							 <thead>
+							      <tr>							  
+							 	        <th>reference</th>
+							 	        <th>type</th>
+									    <th>strike price</th>
+									    <th>stock price</th>
+									    <th>share price</th>
+									    <th>expire</th>
+									    <th>intrinsic</th>
+									    <th>speculative</th>
+									    <th>In money</th>
+							      </tr>
+							  </thead>
+							  <tbody>
+							    <tr data-ng-repeat="option in portfolio.options | orderBy:'expiration'" >
+									    <td>{{ option.reference}}</td>
+									    <td>{{ option.type}}</td>
+									    <td>{{option.strikePrice}}</td>
+									    <th>{{ option.stock.price}}</th>
+									    <td>{{ option.sharePrice}}</td>
+									    <td>{{ option.expiration | date:"dd/MM/yyyy"}}</td>
+									    <td>{{ option.intrinsicValue}}</td>
+									    <td>{{ option.speculativePremium}}</td>
+									    <td><label  ng-class="{'label label-success': option.inMoney, 'label label-warning': !option.inMoney}" >
+									    {{ option.inMoney }}</label></td>
+							  </tr>
+							  </tbody>
+							</table>
+                    </div>
+                 
+            </div>   
+        
+    </div>
