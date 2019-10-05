@@ -6,7 +6,6 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 import com.farouk.bengarssallah.spring.angular.model.Portfolio;
 
-@RepositoryRestResource
 public interface PortfolioRepository extends MongoRepository<Portfolio, Long> {
 
 	@Query("{ 'reference' : ?0 }")
