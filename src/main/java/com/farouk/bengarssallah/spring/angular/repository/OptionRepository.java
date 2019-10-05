@@ -6,7 +6,7 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 import com.farouk.bengarssallah.spring.angular.model.Option;
 
-@RepositoryRestResource
+
 public interface OptionRepository extends MongoRepository<Option, Long> {
 
 	@Query("{ 'reference' : ?0 }")
