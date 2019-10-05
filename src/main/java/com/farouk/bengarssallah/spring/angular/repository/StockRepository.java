@@ -6,7 +6,6 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 import com.farouk.bengarssallah.spring.angular.model.Stock;
 
-@RepositoryRestResource
 public interface StockRepository extends MongoRepository<Stock, Long> {
 	
 	@Query("{ 'symbol' : ?0 }")
